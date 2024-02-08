@@ -18,7 +18,7 @@ class Hangman
   end
 
   def play
-    puts display_rules.stripgit 
+    puts display_rules.strip
     loop do
       disset_up_game_state
       guess = get_user_guess
