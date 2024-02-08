@@ -51,7 +51,7 @@ class Hangman
       puts "Error fetching word from API: #{e.message}"
       puts "Using a default word."
       # Provide a default word or exit the game gracefully
-      @default_word  # Default word
+      DEFAULT_WORDS.sample  # Default word
     end
   end
   
@@ -107,21 +107,21 @@ class Hangman
     @guessed_letters = []
     @max_attempts = 7
     @incorrect_guess = []
-    @default_word = DEFAULT_WORDS.sample
   end
 
   def new_game?
     puts "Would you like to play again? (y/n)"
-    answer = gets.chomp.downcase
-
-    if answer == 'y'
-      set_up_game
-      play
-    elsif answer == 'n'
-      puts "Thanks for playing Hangman!"
-      exit
-    else
-      puts "Invalid input. Please choose y/n."
+    loop do
+      answer = gets.chomp.downcase
+      if answer == 'y'
+        set_up_game
+        play
+      elsif answer == 'n'
+        puts "Thanks for playing Hangman!"
+        exit
+      else
+        puts "Invalid input. Please choose y/n."
+      end
     end
   end
 
