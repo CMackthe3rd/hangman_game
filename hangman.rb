@@ -18,7 +18,7 @@ class Hangman
   end
 
   def play
-    puts display_rules.strip
+    puts display_rules.stripgit 
     loop do
       disset_up_game_state
       guess = get_user_guess
@@ -36,7 +36,7 @@ class Hangman
     uri = URI('https://wordsapiv1.p.rapidapi.com/words/?random=true')
     headers = {
       'X-RapidAPI-Host' => 'wordsapiv1.p.rapidapi.com',
-      'X-RapidAPI-Key' => 'd5e2257a9amsh69125b4298de0d2p1957bejsn8bb10da2c2d9'
+      'X-RapidAPI-Key' => 'your_api_key_here'
     }
 
     begin
